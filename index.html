@@ -1,1 +1,590 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Gizlilik Politikası | KPSS Hazırlan</title>
+
+    <meta name="description"
+          content="KPSS Hazırlan mobil uygulaması Gizlilik Politikası">
+
+    <meta name="robots" content="index, follow">
+
+    <style>
+        :root {
+            --bg: #f5f7fb;
+            --card: #ffffff;
+            --text: #1f2937;
+            --muted: #6b7280;
+            --primary: #5b4cf0;
+            --primary-soft: #f0efff;
+            --border: #e5e7eb;
+            --success: #16865c;
+            --success-soft: #ecfdf5;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            font-family:
+                -apple-system,
+                BlinkMacSystemFont,
+                "Segoe UI",
+                Roboto,
+                Helvetica,
+                Arial,
+                sans-serif;
+
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        .hero {
+            background:
+                linear-gradient(
+                    135deg,
+                    #5b4cf0 0%,
+                    #7c6cf7 100%
+                );
+
+            color: white;
+            padding: 64px 20px 80px;
+            text-align: center;
+        }
+
+        .logo {
+            width: 76px;
+            height: 76px;
+            margin: 0 auto 18px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 22px;
+
+            font-size: 38px;
+        }
+
+        .hero h1 {
+            margin: 0;
+            font-size: clamp(32px, 6vw, 50px);
+            line-height: 1.15;
+        }
+
+        .hero .app-name {
+            margin-top: 12px;
+            font-size: 18px;
+            opacity: 0.95;
+        }
+
+        .hero .date {
+            margin-top: 15px;
+            font-size: 14px;
+            opacity: 0.78;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: -40px auto 60px;
+            padding: 0 18px;
+        }
+
+        .card {
+            background: var(--card);
+            border: 1px solid var(--border);
+            border-radius: 22px;
+
+            padding: clamp(24px, 5vw, 48px);
+
+            box-shadow:
+                0 10px 35px rgba(31, 41, 55, 0.08);
+        }
+
+        .summary {
+            background: var(--success-soft);
+            border: 1px solid #bbf7d0;
+            border-radius: 16px;
+
+            padding: 20px 22px;
+            margin-bottom: 38px;
+        }
+
+        .summary strong {
+            color: var(--success);
+        }
+
+        h2 {
+            margin-top: 42px;
+            margin-bottom: 14px;
+
+            padding-bottom: 10px;
+            border-bottom: 1px solid var(--border);
+
+            font-size: 23px;
+            color: #111827;
+        }
+
+        h2:first-of-type {
+            margin-top: 0;
+        }
+
+        h3 {
+            margin-top: 25px;
+            margin-bottom: 8px;
+
+            font-size: 18px;
+        }
+
+        p {
+            margin: 10px 0 15px;
+        }
+
+        ul {
+            padding-left: 23px;
+        }
+
+        li {
+            margin-bottom: 9px;
+        }
+
+        .info-box {
+            background: var(--primary-soft);
+            border-left: 4px solid var(--primary);
+
+            padding: 17px 20px;
+            border-radius: 10px;
+
+            margin: 20px 0;
+        }
+
+        a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .contact {
+            margin-top: 30px;
+
+            padding: 24px;
+
+            background: #f9fafb;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+        }
+
+        .contact-row {
+            margin: 8px 0;
+        }
+
+        footer {
+            max-width: 900px;
+
+            margin: 0 auto;
+            padding: 0 20px 40px;
+
+            text-align: center;
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .badge {
+            display: inline-block;
+
+            margin-top: 4px;
+            padding: 5px 10px;
+
+            border-radius: 999px;
+
+            background: var(--primary-soft);
+            color: var(--primary);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        @media (max-width: 600px) {
+            .hero {
+                padding-top: 45px;
+                padding-bottom: 65px;
+            }
+
+            .container {
+                margin-top: -30px;
+            }
+
+            .card {
+                border-radius: 18px;
+            }
+
+            h2 {
+                font-size: 21px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="hero">
+
+    <div class="logo">🐻</div>
+
+    <h1>Gizlilik Politikası</h1>
+
+    <div class="app-name">
+        KPSS Hazırlan
+    </div>
+
+    <div class="date">
+        Son güncelleme: 11 Ağustos 2026
+    </div>
+
+</header>
+
+
+<main class="container">
+
+    <article class="card">
+
+        <div class="summary">
+            <strong>Kısa Özet:</strong>
+            KPSS Hazırlan kullanıcı gizliliğine önem verir.
+            Uygulamada reklam gösterilmez ve kullanıcı verileri
+            reklam veya pazarlama amacıyla satılmaz.
+            Uygulamanın çalışma ve tercih verilerinin önemli bir
+            bölümü kullanıcının cihazında yerel olarak saklanır.
+        </div>
+
+
+        <h2>1. Gizlilik Politikası Hakkında</h2>
+
+        <p>
+            Bu Gizlilik Politikası, <strong>KPSS Hazırlan</strong>
+            mobil uygulamasını kullanırken kullanıcı bilgilerinin
+            nasıl işlendiğini açıklamaktadır.
+        </p>
+
+        <p>
+            Uygulamayı kullanarak bu politikada açıklanan veri
+            işleme uygulamaları hakkında bilgilendirilmiş
+            olursunuz.
+        </p>
+
+
+        <h2>2. İşlenebilecek Bilgiler</h2>
+
+        <p>
+            KPSS Hazırlan'ın sunduğu özelliklerin çalışabilmesi
+            amacıyla aşağıdaki türde bilgiler işlenebilir.
+        </p>
+
+
+        <h3>2.1. Çalışma ve Eğitim Verileri</h3>
+
+        <ul>
+            <li>Çözülen testler</li>
+            <li>Doğru ve yanlış cevap bilgileri</li>
+            <li>Test sonuçları</li>
+            <li>Ders ilerleme bilgileri</li>
+            <li>Çalışma istatistikleri</li>
+            <li>Kullanıcı tarafından oluşturulan uygulama tercihleri</li>
+        </ul>
+
+        <p>
+            Bu veriler, kullanıcının eğitim sürecini takip
+            edebilmesi ve uygulama deneyiminin devamlılığının
+            sağlanması amacıyla kullanılabilir.
+        </p>
+
+
+        <h3>2.2. Uygulama Tercihleri</h3>
+
+        <p>
+            Tema, ses, müzik veya benzeri uygulama tercihleri
+            cihaz üzerinde saklanabilir.
+        </p>
+
+
+        <h3>2.3. Teknik Bilgiler</h3>
+
+        <p>
+            Uygulamanın güvenli ve düzgün şekilde çalışmasını
+            sağlamak, teknik sorunları tespit etmek ve uygulamayı
+            geliştirmek amacıyla sınırlı teknik bilgiler
+            işlenebilir.
+        </p>
+
+        <p>Bunlar aşağıdakileri içerebilir:</p>
+
+        <ul>
+            <li>İşletim sistemi bilgisi</li>
+            <li>Uygulama sürümü</li>
+            <li>Cihaz türüne ilişkin teknik bilgiler</li>
+            <li>Hata ve çökme bilgileri</li>
+            <li>Uygulama performansına ilişkin teknik bilgiler</li>
+        </ul>
+
+
+        <h3>2.4. İletişim Yoluyla Sağlanan Bilgiler</h3>
+
+        <p>
+            Kullanıcı bizimle e-posta veya başka bir iletişim
+            kanalı üzerinden iletişime geçtiğinde, kullanıcının
+            kendi isteğiyle gönderdiği e-posta adresi, mesaj
+            içeriği ve ilgili diğer bilgiler işlenebilir.
+        </p>
+
+
+        <h2>3. Verilerin Kullanım Amaçları</h2>
+
+        <p>
+            İşlenen bilgiler yalnızca gerekli olduğu ölçüde
+            aşağıdaki amaçlarla kullanılabilir:
+        </p>
+
+        <ul>
+            <li>Uygulamanın temel özelliklerini sunmak</li>
+            <li>Kullanıcının çalışma ilerlemesini göstermek</li>
+            <li>Kullanıcı tercihlerini hatırlamak</li>
+            <li>Uygulamadaki teknik hataları tespit etmek</li>
+            <li>Performans ve kararlılığı geliştirmek</li>
+            <li>Kullanıcı geri bildirimlerine yanıt vermek</li>
+            <li>Güvenliği sağlamak</li>
+        </ul>
+
+
+        <h2>4. Yerel Depolama</h2>
+
+        <p>
+            KPSS Hazırlan, bazı bilgileri kullanıcının cihazında
+            yerel depolama yöntemleri kullanarak saklayabilir.
+        </p>
+
+        <p>
+            Örneğin çalışma ilerlemesi, test sonuçları ve uygulama
+            tercihleri cihaz üzerinde tutulabilir.
+        </p>
+
+        <div class="info-box">
+            Cihaz üzerinde yerel olarak saklanan veriler,
+            uygulamanın verilerinin temizlenmesi veya uygulamanın
+            kaldırılması sonucunda silinebilir.
+        </div>
+
+
+        <h2>5. Reklamlar</h2>
+
+        <p>
+            KPSS Hazırlan uygulamasında
+            <strong>reklam gösterimi yapılmamaktadır.</strong>
+        </p>
+
+        <p>
+            Kullanıcı bilgileri davranışsal reklamcılık veya
+            reklam hedefleme amacıyla kullanılmaz ve reklam
+            amacıyla satılmaz.
+        </p>
+
+
+        <h2>6. Verilerin Satışı</h2>
+
+        <p>
+            KPSS Hazırlan kullanıcıların kişisel bilgilerini
+            üçüncü taraflara satmaz.
+        </p>
+
+
+        <h2>7. Üçüncü Taraf Hizmetleri</h2>
+
+        <p>
+            Uygulamanın dağıtılması, işletilmesi veya teknik
+            özelliklerinin sağlanması sırasında işletim sistemi,
+            uygulama mağazası veya teknik altyapı sağlayıcılarının
+            hizmetlerinden yararlanılabilir.
+        </p>
+
+        <p>
+            Bu hizmet sağlayıcıları kendi gizlilik politikaları
+            ve veri işleme kuralları kapsamında belirli teknik
+            bilgileri işleyebilir.
+        </p>
+
+        <p>
+            Android cihazlarda uygulamanın indirilmesi,
+            güncellenmesi ve dağıtılması kapsamında Google Play
+            hizmetleri kullanılmaktadır.
+        </p>
+
+        <p>
+            Google'ın gizlilik uygulamaları hakkında bilgi için:
+        </p>
+
+        <p>
+            <a
+                href="https://policies.google.com/privacy"
+                target="_blank"
+                rel="noopener noreferrer">
+                Google Gizlilik Politikası
+            </a>
+        </p>
+
+
+        <h2>8. Veri Güvenliği</h2>
+
+        <p>
+            Kullanıcı bilgilerinin yetkisiz erişim, kayıp,
+            değiştirilme veya kötüye kullanıma karşı korunması
+            amacıyla makul teknik ve idari güvenlik önlemleri
+            uygulanır.
+        </p>
+
+        <p>
+            Bununla birlikte hiçbir elektronik depolama veya
+            iletişim yönteminin yüzde yüz güvenli olduğu garanti
+            edilemez.
+        </p>
+
+
+        <h2>9. Verilerin Saklanması ve Silinmesi</h2>
+
+        <p>
+            Veriler yalnızca işlenme amacı için gerekli olduğu
+            süre boyunca saklanır.
+        </p>
+
+        <h3>Cihazda saklanan veriler</h3>
+
+        <p>
+            Cihaz üzerinde yerel olarak tutulan çalışma verileri
+            ve tercihler; uygulama verilerinin temizlenmesi veya
+            uygulamanın kaldırılması yoluyla kullanıcı tarafından
+            silinebilir.
+        </p>
+
+        <h3>İletişim verileri</h3>
+
+        <p>
+            Destek amacıyla e-posta üzerinden gönderilen bilgiler,
+            kullanıcı talebinin değerlendirilmesi ve gerekli
+            iletişimin sağlanması için makul süre boyunca
+            saklanabilir.
+        </p>
+
+        <p>
+            Kullanıcılar kendileriyle ilişkili verilerin
+            silinmesine yönelik taleplerini aşağıdaki iletişim
+            adresinden iletebilir.
+        </p>
+
+
+        <h2>10. Çocukların Gizliliği</h2>
+
+        <p>
+            KPSS Hazırlan temel olarak KPSS sınavına hazırlanan
+            kullanıcılara yönelik bir eğitim uygulamasıdır.
+        </p>
+
+        <p>
+            13 yaşın altındaki çocuklardan bilerek kişisel bilgi
+            toplanması amaçlanmamaktadır.
+        </p>
+
+        <p>
+            13 yaşın altındaki bir çocuğa ait kişisel bilginin
+            tarafımıza ulaştığının tespit edilmesi halinde,
+            ilgili bilginin silinmesi için gerekli işlemler
+            gerçekleştirilecektir.
+        </p>
+
+
+        <h2>11. Kullanıcı Hakları</h2>
+
+        <p>
+            Kullanıcılar, uygulanabilir veri koruma mevzuatı
+            kapsamında kendileriyle ilgili veriler konusunda
+            bilgi veya silme talebinde bulunabilir.
+        </p>
+
+        <p>
+            Bu kapsamdaki talepler aşağıdaki e-posta adresine
+            gönderilebilir.
+        </p>
+
+
+        <h2>12. Gizlilik Politikasındaki Değişiklikler</h2>
+
+        <p>
+            Uygulamanın özelliklerinin veya hukuki gerekliliklerin
+            değişmesi halinde bu Gizlilik Politikası
+            güncellenebilir.
+        </p>
+
+        <p>
+            Politikanın güncel sürümü bu sayfada yayınlanır ve
+            sayfanın üst bölümünde son güncelleme tarihi
+            gösterilir.
+        </p>
+
+
+        <h2>13. İletişim</h2>
+
+        <div class="contact">
+
+            <div class="contact-row">
+                <strong>Uygulama:</strong>
+                KPSS Hazırlan
+            </div>
+
+            <div class="contact-row">
+                <strong>Geliştirici:</strong>
+                Berk Software
+            </div>
+
+            <div class="contact-row">
+                <strong>E-posta:</strong>
+
+                <a href="mailto:munirberkbabal@gmail.com">
+                    munirberkbabal@gmail.com
+                </a>
+            </div>
+
+            <div class="contact-row">
+                <span class="badge">
+                    Gizlilik ve veri talepleri
+                </span>
+            </div>
+
+        </div>
+
+    </article>
+
+</main>
+
+
+<footer>
+
+    © 2026 KPSS Hazırlan · Berk Software
+    <br>
+    Tüm hakları saklıdır.
+
+</footer>
+
+</body>
+</html>
