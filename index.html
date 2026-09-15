@@ -1,590 +1,437 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="tr" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Gizlilik Politikası | KPSS Hazırlan</title>
-
-    <meta name="description"
-          content="KPSS Hazırlan mobil uygulaması Gizlilik Politikası">
-
+    <title>Gizlilik Politikası — KPSS Hazırlan</title>
+    <meta name="description" content="KPSS Hazırlan mobil uygulaması resmi Gizlilik Politikası belgesi. Veri güvenliği, yerel depolama ve gizlilik standartları.">
+    <meta name="author" content="Berk Software - Münir Berk BABAL">
     <meta name="robots" content="index, follow">
 
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#2563eb',
+                    }
+                }
+            }
+        }
+    </script>
+
     <style>
-        :root {
-            --bg: #f5f7fb;
-            --card: #ffffff;
-            --text: #1f2937;
-            --muted: #6b7280;
-            --primary: #5b4cf0;
-            --primary-soft: #f0efff;
-            --border: #e5e7eb;
-            --success: #16865c;
-            --success-soft: #ecfdf5;
+        /* Minimal clean scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f8fafc;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
         }
 
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family:
-                -apple-system,
-                BlinkMacSystemFont,
-                "Segoe UI",
-                Roboto,
-                Helvetica,
-                Arial,
-                sans-serif;
-
-            background: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-        }
-
-        .hero {
-            background:
-                linear-gradient(
-                    135deg,
-                    #5b4cf0 0%,
-                    #7c6cf7 100%
-                );
-
-            color: white;
-            padding: 64px 20px 80px;
-            text-align: center;
-        }
-
-        .logo {
-            width: 76px;
-            height: 76px;
-            margin: 0 auto 18px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: rgba(255,255,255,0.15);
-            border: 1px solid rgba(255,255,255,0.25);
-            border-radius: 22px;
-
-            font-size: 38px;
-        }
-
-        .hero h1 {
-            margin: 0;
-            font-size: clamp(32px, 6vw, 50px);
-            line-height: 1.15;
-        }
-
-        .hero .app-name {
-            margin-top: 12px;
-            font-size: 18px;
-            opacity: 0.95;
-        }
-
-        .hero .date {
-            margin-top: 15px;
-            font-size: 14px;
-            opacity: 0.78;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: -40px auto 60px;
-            padding: 0 18px;
-        }
-
-        .card {
-            background: var(--card);
-            border: 1px solid var(--border);
-            border-radius: 22px;
-
-            padding: clamp(24px, 5vw, 48px);
-
-            box-shadow:
-                0 10px 35px rgba(31, 41, 55, 0.08);
-        }
-
-        .summary {
-            background: var(--success-soft);
-            border: 1px solid #bbf7d0;
-            border-radius: 16px;
-
-            padding: 20px 22px;
-            margin-bottom: 38px;
-        }
-
-        .summary strong {
-            color: var(--success);
-        }
-
-        h2 {
-            margin-top: 42px;
-            margin-bottom: 14px;
-
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--border);
-
-            font-size: 23px;
-            color: #111827;
-        }
-
-        h2:first-of-type {
-            margin-top: 0;
-        }
-
-        h3 {
-            margin-top: 25px;
-            margin-bottom: 8px;
-
-            font-size: 18px;
-        }
-
-        p {
-            margin: 10px 0 15px;
-        }
-
-        ul {
-            padding-left: 23px;
-        }
-
-        li {
-            margin-bottom: 9px;
-        }
-
-        .info-box {
-            background: var(--primary-soft);
-            border-left: 4px solid var(--primary);
-
-            padding: 17px 20px;
-            border-radius: 10px;
-
-            margin: 20px 0;
-        }
-
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        .contact {
-            margin-top: 30px;
-
-            padding: 24px;
-
-            background: #f9fafb;
-            border: 1px solid var(--border);
-            border-radius: 16px;
-        }
-
-        .contact-row {
-            margin: 8px 0;
-        }
-
-        footer {
-            max-width: 900px;
-
-            margin: 0 auto;
-            padding: 0 20px 40px;
-
-            text-align: center;
-            color: var(--muted);
-            font-size: 14px;
-        }
-
-        .badge {
-            display: inline-block;
-
-            margin-top: 4px;
-            padding: 5px 10px;
-
-            border-radius: 999px;
-
-            background: var(--primary-soft);
-            color: var(--primary);
-
-            font-size: 13px;
-            font-weight: 600;
-        }
-
-        @media (max-width: 600px) {
-            .hero {
-                padding-top: 45px;
-                padding-bottom: 65px;
+        @media print {
+            .no-print {
+                display: none !important;
             }
-
-            .container {
-                margin-top: -30px;
+            body {
+                background: #ffffff !important;
+                color: #000000 !important;
             }
-
-            .card {
-                border-radius: 18px;
-            }
-
-            h2 {
-                font-size: 21px;
+            .document-card {
+                border: none !important;
+                box-shadow: none !important;
+                padding: 0 !important;
             }
         }
     </style>
 </head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col font-sans selection:bg-blue-100 selection:text-blue-900">
 
-<body>
-
-<header class="hero">
-
-    <div class="logo">🐻</div>
-
-    <h1>Gizlilik Politikası</h1>
-
-    <div class="app-name">
-        KPSS Hazırlan
+    <!-- Minimalist Toast Notification -->
+    <div id="toast" class="fixed bottom-6 right-6 z-50 transform translate-y-12 opacity-0 pointer-events-none transition-all duration-200 flex items-center gap-2 px-4 py-2.5 rounded-lg bg-slate-900 text-white text-xs shadow-lg">
+        <svg class="w-4 h-4 text-emerald-400 shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+        <span id="toastMsg">Panoya kopyalandı</span>
     </div>
 
-    <div class="date">
-        Son güncelleme: 11 Ağustos 2026
-    </div>
-
-</header>
-
-
-<main class="container">
-
-    <article class="card">
-
-        <div class="summary">
-            <strong>Kısa Özet:</strong>
-            KPSS Hazırlan kullanıcı gizliliğine önem verir.
-            Uygulamada reklam gösterilmez ve kullanıcı verileri
-            reklam veya pazarlama amacıyla satılmaz.
-            Uygulamanın çalışma ve tercih verilerinin önemli bir
-            bölümü kullanıcının cihazında yerel olarak saklanır.
-        </div>
-
-
-        <h2>1. Gizlilik Politikası Hakkında</h2>
-
-        <p>
-            Bu Gizlilik Politikası, <strong>KPSS Hazırlan</strong>
-            mobil uygulamasını kullanırken kullanıcı bilgilerinin
-            nasıl işlendiğini açıklamaktadır.
-        </p>
-
-        <p>
-            Uygulamayı kullanarak bu politikada açıklanan veri
-            işleme uygulamaları hakkında bilgilendirilmiş
-            olursunuz.
-        </p>
-
-
-        <h2>2. İşlenebilecek Bilgiler</h2>
-
-        <p>
-            KPSS Hazırlan'ın sunduğu özelliklerin çalışabilmesi
-            amacıyla aşağıdaki türde bilgiler işlenebilir.
-        </p>
-
-
-        <h3>2.1. Çalışma ve Eğitim Verileri</h3>
-
-        <ul>
-            <li>Çözülen testler</li>
-            <li>Doğru ve yanlış cevap bilgileri</li>
-            <li>Test sonuçları</li>
-            <li>Ders ilerleme bilgileri</li>
-            <li>Çalışma istatistikleri</li>
-            <li>Kullanıcı tarafından oluşturulan uygulama tercihleri</li>
-        </ul>
-
-        <p>
-            Bu veriler, kullanıcının eğitim sürecini takip
-            edebilmesi ve uygulama deneyiminin devamlılığının
-            sağlanması amacıyla kullanılabilir.
-        </p>
-
-
-        <h3>2.2. Uygulama Tercihleri</h3>
-
-        <p>
-            Tema, ses, müzik veya benzeri uygulama tercihleri
-            cihaz üzerinde saklanabilir.
-        </p>
-
-
-        <h3>2.3. Teknik Bilgiler</h3>
-
-        <p>
-            Uygulamanın güvenli ve düzgün şekilde çalışmasını
-            sağlamak, teknik sorunları tespit etmek ve uygulamayı
-            geliştirmek amacıyla sınırlı teknik bilgiler
-            işlenebilir.
-        </p>
-
-        <p>Bunlar aşağıdakileri içerebilir:</p>
-
-        <ul>
-            <li>İşletim sistemi bilgisi</li>
-            <li>Uygulama sürümü</li>
-            <li>Cihaz türüne ilişkin teknik bilgiler</li>
-            <li>Hata ve çökme bilgileri</li>
-            <li>Uygulama performansına ilişkin teknik bilgiler</li>
-        </ul>
-
-
-        <h3>2.4. İletişim Yoluyla Sağlanan Bilgiler</h3>
-
-        <p>
-            Kullanıcı bizimle e-posta veya başka bir iletişim
-            kanalı üzerinden iletişime geçtiğinde, kullanıcının
-            kendi isteğiyle gönderdiği e-posta adresi, mesaj
-            içeriği ve ilgili diğer bilgiler işlenebilir.
-        </p>
-
-
-        <h2>3. Verilerin Kullanım Amaçları</h2>
-
-        <p>
-            İşlenen bilgiler yalnızca gerekli olduğu ölçüde
-            aşağıdaki amaçlarla kullanılabilir:
-        </p>
-
-        <ul>
-            <li>Uygulamanın temel özelliklerini sunmak</li>
-            <li>Kullanıcının çalışma ilerlemesini göstermek</li>
-            <li>Kullanıcı tercihlerini hatırlamak</li>
-            <li>Uygulamadaki teknik hataları tespit etmek</li>
-            <li>Performans ve kararlılığı geliştirmek</li>
-            <li>Kullanıcı geri bildirimlerine yanıt vermek</li>
-            <li>Güvenliği sağlamak</li>
-        </ul>
-
-
-        <h2>4. Yerel Depolama</h2>
-
-        <p>
-            KPSS Hazırlan, bazı bilgileri kullanıcının cihazında
-            yerel depolama yöntemleri kullanarak saklayabilir.
-        </p>
-
-        <p>
-            Örneğin çalışma ilerlemesi, test sonuçları ve uygulama
-            tercihleri cihaz üzerinde tutulabilir.
-        </p>
-
-        <div class="info-box">
-            Cihaz üzerinde yerel olarak saklanan veriler,
-            uygulamanın verilerinin temizlenmesi veya uygulamanın
-            kaldırılması sonucunda silinebilir.
-        </div>
-
-
-        <h2>5. Reklamlar</h2>
-
-        <p>
-            KPSS Hazırlan uygulamasında
-            <strong>reklam gösterimi yapılmamaktadır.</strong>
-        </p>
-
-        <p>
-            Kullanıcı bilgileri davranışsal reklamcılık veya
-            reklam hedefleme amacıyla kullanılmaz ve reklam
-            amacıyla satılmaz.
-        </p>
-
-
-        <h2>6. Verilerin Satışı</h2>
-
-        <p>
-            KPSS Hazırlan kullanıcıların kişisel bilgilerini
-            üçüncü taraflara satmaz.
-        </p>
-
-
-        <h2>7. Üçüncü Taraf Hizmetleri</h2>
-
-        <p>
-            Uygulamanın dağıtılması, işletilmesi veya teknik
-            özelliklerinin sağlanması sırasında işletim sistemi,
-            uygulama mağazası veya teknik altyapı sağlayıcılarının
-            hizmetlerinden yararlanılabilir.
-        </p>
-
-        <p>
-            Bu hizmet sağlayıcıları kendi gizlilik politikaları
-            ve veri işleme kuralları kapsamında belirli teknik
-            bilgileri işleyebilir.
-        </p>
-
-        <p>
-            Android cihazlarda uygulamanın indirilmesi,
-            güncellenmesi ve dağıtılması kapsamında Google Play
-            hizmetleri kullanılmaktadır.
-        </p>
-
-        <p>
-            Google'ın gizlilik uygulamaları hakkında bilgi için:
-        </p>
-
-        <p>
-            <a
-                href="https://policies.google.com/privacy"
-                target="_blank"
-                rel="noopener noreferrer">
-                Google Gizlilik Politikası
-            </a>
-        </p>
-
-
-        <h2>8. Veri Güvenliği</h2>
-
-        <p>
-            Kullanıcı bilgilerinin yetkisiz erişim, kayıp,
-            değiştirilme veya kötüye kullanıma karşı korunması
-            amacıyla makul teknik ve idari güvenlik önlemleri
-            uygulanır.
-        </p>
-
-        <p>
-            Bununla birlikte hiçbir elektronik depolama veya
-            iletişim yönteminin yüzde yüz güvenli olduğu garanti
-            edilemez.
-        </p>
-
-
-        <h2>9. Verilerin Saklanması ve Silinmesi</h2>
-
-        <p>
-            Veriler yalnızca işlenme amacı için gerekli olduğu
-            süre boyunca saklanır.
-        </p>
-
-        <h3>Cihazda saklanan veriler</h3>
-
-        <p>
-            Cihaz üzerinde yerel olarak tutulan çalışma verileri
-            ve tercihler; uygulama verilerinin temizlenmesi veya
-            uygulamanın kaldırılması yoluyla kullanıcı tarafından
-            silinebilir.
-        </p>
-
-        <h3>İletişim verileri</h3>
-
-        <p>
-            Destek amacıyla e-posta üzerinden gönderilen bilgiler,
-            kullanıcı talebinin değerlendirilmesi ve gerekli
-            iletişimin sağlanması için makul süre boyunca
-            saklanabilir.
-        </p>
-
-        <p>
-            Kullanıcılar kendileriyle ilişkili verilerin
-            silinmesine yönelik taleplerini aşağıdaki iletişim
-            adresinden iletebilir.
-        </p>
-
-
-        <h2>10. Çocukların Gizliliği</h2>
-
-        <p>
-            KPSS Hazırlan temel olarak KPSS sınavına hazırlanan
-            kullanıcılara yönelik bir eğitim uygulamasıdır.
-        </p>
-
-        <p>
-            13 yaşın altındaki çocuklardan bilerek kişisel bilgi
-            toplanması amaçlanmamaktadır.
-        </p>
-
-        <p>
-            13 yaşın altındaki bir çocuğa ait kişisel bilginin
-            tarafımıza ulaştığının tespit edilmesi halinde,
-            ilgili bilginin silinmesi için gerekli işlemler
-            gerçekleştirilecektir.
-        </p>
-
-
-        <h2>11. Kullanıcı Hakları</h2>
-
-        <p>
-            Kullanıcılar, uygulanabilir veri koruma mevzuatı
-            kapsamında kendileriyle ilgili veriler konusunda
-            bilgi veya silme talebinde bulunabilir.
-        </p>
-
-        <p>
-            Bu kapsamdaki talepler aşağıdaki e-posta adresine
-            gönderilebilir.
-        </p>
-
-
-        <h2>12. Gizlilik Politikasındaki Değişiklikler</h2>
-
-        <p>
-            Uygulamanın özelliklerinin veya hukuki gerekliliklerin
-            değişmesi halinde bu Gizlilik Politikası
-            güncellenebilir.
-        </p>
-
-        <p>
-            Politikanın güncel sürümü bu sayfada yayınlanır ve
-            sayfanın üst bölümünde son güncelleme tarihi
-            gösterilir.
-        </p>
-
-
-        <h2>13. İletişim</h2>
-
-        <div class="contact">
-
-            <div class="contact-row">
-                <strong>Uygulama:</strong>
-                KPSS Hazırlan
+    <!-- Top Utility Header -->
+    <header class="border-b border-slate-200 bg-white no-print">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
+            
+            <!-- App Name & Minimal Vector Bear Icon -->
+            <div class="flex items-center gap-3">
+                <div class="w-9 h-9 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-sm shadow-blue-500/10">
+                    <!-- Clean Vector Bear Icon (No external images) -->
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                        <path d="M19.5 7.05a2.5 2.5 0 0 0-2.3-1.55c-.25 0-.49.04-.72.12C15.18 4.38 13.68 3.5 12 3.5c-1.68 0-3.18.88-4.48 2.12-.23-.08-.47-.12-.72-.12a2.5 2.5 0 0 0-2.3 1.55C3.59 8.87 3 11.23 3 13.5 3 18.2 7.03 22 12 22s9-3.8 9-8.5c0-2.27-.59-4.63-1.5-6.45zM8 11.5a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm8 0a1.25 1.25 0 1 1 0-2.5 1.25 1.25 0 0 1 0 2.5zm-4 7c-2.1 0-3.5-1.2-3.5-2.2 0-.8.9-1.3 3.5-1.3s3.5.5 3.5 1.3c0 1-1.4 2.2-3.5 2.2z"/>
+                    </svg>
+                </div>
+                <div>
+                    <span class="text-sm font-bold text-slate-900 block leading-tight">KPSS Hazırlan</span>
+                    <span class="text-[11px] text-slate-500 block leading-tight">Gizlilik Politikası</span>
+                </div>
             </div>
 
-            <div class="contact-row">
-                <strong>Geliştirici:</strong>
-                Berk Software
-            </div>
+            <!-- Header Action Buttons -->
+            <div class="flex items-center gap-2 text-xs">
+                <button onclick="copyMail()" class="px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors inline-flex items-center gap-1.5">
+                    <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    <span>E-posta Kopyala</span>
+                </button>
 
-            <div class="contact-row">
-                <strong>E-posta:</strong>
-
-                <a href="mailto:munirberkbabal@gmail.com">
-                    munirberkbabal@gmail.com
-                </a>
-            </div>
-
-            <div class="contact-row">
-                <span class="badge">
-                    Gizlilik ve veri talepleri
-                </span>
+                <button onclick="window.print()" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-slate-200 text-slate-600 hover:text-slate-900 hover:bg-slate-50 transition-colors">
+                    <svg class="w-3.5 h-3.5 text-slate-400" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <rect x="6" y="14" width="12" height="8"></rect>
+                    </svg>
+                    <span>Yazdır</span>
+                </button>
             </div>
 
         </div>
+    </header>
 
-    </article>
+    <!-- Document Container -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 py-8 sm:py-12 w-full flex-1">
+        
+        <article class="bg-white border border-slate-200 rounded-2xl p-6 sm:p-12 shadow-sm document-card">
+            
+            <!-- Document Meta Header -->
+            <div class="border-b border-slate-100 pb-8 mb-8 space-y-3">
+                <div class="flex items-center gap-2">
+                    <span class="px-2.5 py-1 rounded-md text-[11px] font-semibold tracking-wide uppercase bg-slate-100 text-slate-700">
+                        Resmi Doküman
+                    </span>
+                    <span class="text-slate-300">•</span>
+                    <span class="text-xs text-slate-500">Google Play Uyumlu</span>
+                </div>
 
-</main>
+                <h1 class="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
+                    Gizlilik Politikası
+                </h1>
 
+                <p class="text-sm text-slate-600 max-w-2xl leading-relaxed">
+                    Bu belge, <strong>KPSS Hazırlan</strong> mobil uygulamasının veri işleme, gizlilik ve kullanıcı mahremiyetine ilişkin temel ilkelerini açıklamaktadır.
+                </p>
 
-<footer>
+                <div class="pt-2 flex flex-wrap gap-y-2 gap-x-6 text-xs text-slate-500 font-mono">
+                    <div>Son Güncelleme: <span class="font-semibold text-slate-700">11 Ağustos 2026</span></div>
+                    <div>Geliştirici: <span class="font-semibold text-slate-700">Berk Software (Münir Berk BABAL)</span></div>
+                </div>
+            </div>
 
-    © 2026 KPSS Hazırlan · Berk Software
-    <br>
-    Tüm hakları saklıdır.
+            <!-- 3 Core Privacy Principles (Summary Box) -->
+            <div class="mb-10 p-5 rounded-xl bg-slate-50 border border-slate-200/80">
+                <div class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-3">
+                    Kısa Özet & Temel Taahhütlerimiz
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 text-xs">
+                    <div class="space-y-1">
+                        <div class="font-bold text-slate-800 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                            Sıfır Reklam
+                        </div>
+                        <p class="text-slate-500 leading-relaxed">
+                            Uygulamada hiçbir reklam gösterilmez veya reklam izleyicisi çalıştırılmaz.
+                        </p>
+                    </div>
 
-</footer>
+                    <div class="space-y-1">
+                        <div class="font-bold text-slate-800 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+                            Veri Satışı Yok
+                        </div>
+                        <p class="text-slate-500 leading-relaxed">
+                            Kullanıcı verileri hiçbir şart altında üçüncü taraflara satılmaz.
+                        </p>
+                    </div>
 
+                    <div class="space-y-1">
+                        <div class="font-bold text-slate-800 flex items-center gap-1.5">
+                            <span class="w-1.5 h-1.5 rounded-full bg-indigo-500"></span>
+                            Cihazda Yerel Depolama
+                        </div>
+                        <p class="text-slate-500 leading-relaxed">
+                            Çalışma geçmişiniz ve testleriniz doğrudan kendi telefonunuzda saklanır.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Legal Policy Content Sections -->
+            <div class="space-y-8 text-sm leading-relaxed text-slate-700">
+
+                <!-- 1 -->
+                <section class="space-y-2">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        1. Gizlilik Politikası Hakkında
+                    </h2>
+                    <p>
+                        Bu Gizlilik Politikası, <strong>KPSS Hazırlan</strong> mobil uygulamasını kullanırken kullanıcı bilgilerinin nasıl işlendiğini ve korunduğunu açıklamaktadır.
+                    </p>
+                    <p>
+                        Uygulamayı kullanarak bu belgede yer alan esaslar hakkında bilgilendirilmiş olursunuz.
+                    </p>
+                </section>
+
+                <!-- 2 -->
+                <section class="space-y-3">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        2. İşlenebilecek Bilgiler
+                    </h2>
+                    <p>
+                        Uygulamanın eğitim ve sınav hazırlık özelliklerini eksiksiz sunabilmesi amacıyla aşağıdaki türde bilgiler işlenebilir:
+                    </p>
+
+                    <div class="space-y-3 pl-2 sm:pl-4">
+                        <div>
+                            <strong class="font-semibold text-slate-900 block">2.1. Çalışma ve Eğitim Verileri</strong>
+                            <p class="text-slate-600 text-xs sm:text-sm mt-0.5">
+                                Çözülen testler, doğru ve yanlış cevap bilgileri, test netleri, ders bazlı ilerleme durumları ve çalışma istatistikleri. Bu veriler eğitim sürecinizi takip etmeniz için kullanılır.
+                            </p>
+                        </div>
+
+                        <div>
+                            <strong class="font-semibold text-slate-900 block">2.2. Uygulama Tercihleri</strong>
+                            <p class="text-slate-600 text-xs sm:text-sm mt-0.5">
+                                Tema (karanlık/aydınlık mod), ses efektleri, yazı tipi boyutu gibi kullanıcı arayüzü ayarları cihaz üzerinde saklanır.
+                            </p>
+                        </div>
+
+                        <div>
+                            <strong class="font-semibold text-slate-900 block">2.3. Teknik Bilgiler</strong>
+                            <p class="text-slate-600 text-xs sm:text-sm mt-0.5">
+                                Kararlılığı sağlamak ve sistem kilitlenmelerini tespit etmek amacıyla işletim sistemi sürümü, uygulama sürüm numarası ve kilitlenme (crash) hata günlükleri.
+                            </p>
+                        </div>
+
+                        <div>
+                            <strong class="font-semibold text-slate-900 block">2.4. İletişim Bilgileri</strong>
+                            <p class="text-slate-600 text-xs sm:text-sm mt-0.5">
+                                Destek talep ettiğinizde tarafımıza ilettiğiniz e-posta adresi ve mesaj içeriği, yalnızca talebinize çözüm üretmek amacıyla kullanılır.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 3 -->
+                <section class="space-y-2">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        3. Verilerin Kullanım Amaçları
+                    </h2>
+                    <p>Toplanan veya işlenen sınırlı bilgiler şu meşru amaçlarla kullanılmaktadır:</p>
+                    <ul class="list-disc list-inside space-y-1 text-slate-600 pl-1 text-xs sm:text-sm">
+                        <li>Uygulamanın temel eğitim ve test özelliklerini çalıştırmak</li>
+                        <li>Kullanıcının çalışma ilerlemesini ve netlerini göstermek</li>
+                        <li>Arayüz tercihlerini hatırlamak</li>
+                        <li>Teknik arızaları gidermek ve kararlılığı artırmak</li>
+                        <li>Kullanıcı destek taleplerini yanıtlamak</li>
+                    </ul>
+                </section>
+
+                <!-- 4 -->
+                <section class="space-y-2">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        4. Yerel Depolama (Local Storage)
+                    </h2>
+                    <p>
+                        KPSS Hazırlan, çalışma verilerini ve tercihleri kullanıcının telefonunda yerel depolama yöntemleriyle (Shared Preferences / SQLite) tutar.
+                    </p>
+                    <p class="text-xs text-slate-500 bg-slate-50 p-3 rounded-lg border border-slate-200">
+                        <strong>Not:</strong> Cihaz üzerinde tutulan bu veriler, telefon ayarlarından uygulama verilerinin temizlenmesi veya uygulamanın cihazdan silinmesi halinde tamamen kaldırılır.
+                    </p>
+                </section>
+
+                <!-- 5 -->
+                <section class="space-y-2">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        5. Reklamlar
+                    </h2>
+                    <p>
+                        KPSS Hazırlan uygulamasında <strong>reklam gösterimi yapılmamaktadır.</strong>
+                    </p>
+                    <p class="text-slate-600">
+                        Kullanıcı bilgileri reklam hedefleme, profilleme veya reklam ağlarına pazarlama amacıyla kesinlikle kullanılmaz.
+                    </p>
+                </section>
+
+                <!-- 6 -->
+                <section class="space-y-2">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        6. Verilerin Satışı
+                    </h2>
+                    <p>
+                        Kullanıcıların kişisel verileri veya kullanım bilgileri hiçbir şart altında üçüncü şahıslara veya şirketlere <strong>satılmaz.</strong>
+                    </p>
+                </section>
+
+                <!-- 7 -->
+                <section class="space-y-2">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        7. Üçüncü Taraf Hizmetleri
+                    </h2>
+                    <p>
+                        Uygulamanın Android işletim sisteminde güvenle indirilmesi ve güncellenmesi kapsamında <strong>Google Play</strong> servisleri kullanılmaktadır. Google'ın kendi veri politikaları hakkında bilgi edinmek için <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline font-medium">Google Gizlilik Politikası</a> sayfasını inceleyebilirsiniz.
+                    </p>
+                </section>
+
+                <!-- 8 -->
+                <section class="space-y-2">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        8. Veri Güvenliği
+                    </h2>
+                    <p>
+                        Kullanıcı bilgilerinin yetkisiz erişim, kayıp veya suiistimale karşı korunması adına standart teknik ve idari güvenlik önlemleri alınmaktadır.
+                    </p>
+                </section>
+
+                <!-- 9 -->
+                <section class="space-y-2">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        9. Verilerin Saklanması ve Silinmesi
+                    </h2>
+                    <p>
+                        Yerel olarak tutulan test ve ilerleme bilgileri kullanıcı tarafından uygulama verileri temizlenerek veya uygulama kaldırılarak anında silinebilir. E-posta üzerinden iletilen destek talepleri ise yalnızca destek sürecinin tamamlanması için gereken makul süre boyunca saklanır.
+                    </p>
+                </section>
+
+                <!-- 10 -->
+                <section class="space-y-2">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        10. Çocukların Gizliliği
+                    </h2>
+                    <p>
+                        KPSS Hazırlan genel olarak KPSS sınavına hazırlanan adaylara yönelik bir eğitim aracıdır. 13 yaşın altındaki çocuklardan bilerek kişisel bilgi toplanmamaktadır.
+                    </p>
+                </section>
+
+                <!-- 11 -->
+                <section class="space-y-2">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        11. Kullanıcı Hakları
+                    </h2>
+                    <p>
+                        Uygulanabilir veri koruma mevzuatı (KVKK / GDPR) kapsamında kullanıcılar, verileri hakkında bilgi alma, düzeltilmesini veya silinmesini talep etme hakkına sahiptir. Taleplerinizi geliştirici e-posta adresimize iletebilirsiniz.
+                    </p>
+                </section>
+
+                <!-- 12 -->
+                <section class="space-y-2">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2">
+                        12. Politika Değişiklikleri
+                    </h2>
+                    <p>
+                        Gerekli görüldüğü durumlarda veya mevzuat güncellemelerinde bu Gizlilik Politikası revize edilebilir. Güncel sürüm her zaman bu sayfada yayımlanır.
+                    </p>
+                </section>
+
+                <!-- 13: Contact Box -->
+                <section class="pt-4">
+                    <h2 class="text-base sm:text-lg font-bold text-slate-900 border-b border-slate-100 pb-2 mb-4">
+                        13. İletişim & Veri Sorumlusu
+                    </h2>
+
+                    <div class="p-5 rounded-xl border border-slate-200 bg-slate-50/60 space-y-3">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+                            <div>
+                                <span class="text-slate-400 uppercase tracking-wider block text-[10px]">Uygulama Adı</span>
+                                <span class="font-semibold text-slate-800">KPSS Hazırlan</span>
+                            </div>
+                            <div>
+                                <span class="text-slate-400 uppercase tracking-wider block text-[10px]">Geliştirici</span>
+                                <span class="font-semibold text-slate-800">Berk Software (Münir Berk BABAL)</span>
+                            </div>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-200 flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <div class="text-xs">
+                                <span class="text-slate-500 block">E-posta Adresi:</span>
+                                <span class="font-mono font-medium text-slate-800 select-all">munirberkbabal@gmail.com</span>
+                            </div>
+
+                            <div class="flex items-center gap-2">
+                                <button onclick="copyMail()" class="px-3 py-1.5 rounded-lg bg-white hover:bg-slate-100 border border-slate-200 text-xs font-semibold text-slate-700 transition-colors">
+                                    Adresi Kopyala
+                                </button>
+                                <a href="mailto:munirberkbabal@gmail.com?subject=KPSS%20Haz%C4%B1rlan%20Gizlilik%20Politikas%C4%B1" class="px-3 py-1.5 rounded-lg bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold transition-colors">
+                                    E-posta Gönder
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+        </article>
+
+    </main>
+
+    <!-- Minimal Document Footer -->
+    <footer class="border-t border-slate-200 bg-white py-6 text-center text-xs text-slate-500 no-print">
+        <div class="max-w-4xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <div>
+                © 2026 KPSS Hazırlan · Berk Software
+            </div>
+            <div class="flex items-center gap-4 text-[11px] text-slate-400">
+                <a href="https://play.google.com/store/apps/developer?id=munirberkbabal" target="_blank" rel="noopener noreferrer" class="hover:text-slate-600">Google Play</a>
+                <span>•</span>
+                <a href="https://www.linkedin.com/in/munirberkbabal/" target="_blank" rel="noopener noreferrer" class="hover:text-slate-600">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Simple Clipboard Logic -->
+    <script>
+        function copyMail() {
+            const email = "munirberkbabal@gmail.com";
+            const temp = document.createElement("textarea");
+            temp.value = email;
+            temp.style.position = "fixed";
+            temp.style.opacity = "0";
+            document.body.appendChild(temp);
+            temp.select();
+
+            try {
+                document.execCommand("copy");
+                showToast("E-posta adresi panoya kopyalandı!");
+            } catch (e) {
+                showToast(email);
+            }
+            document.body.removeChild(temp);
+        }
+
+        function showToast(msg) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toastMsg');
+            if (!toast || !toastMsg) return;
+
+            toastMsg.textContent = msg;
+            toast.classList.remove('translate-y-12', 'opacity-0', 'pointer-events-none');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-12', 'opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+    </script>
 </body>
 </html>
